@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React, { useState, useEffect } from 'react';
+import Register from './Register';
+import Login from './Login';
+import MovieGallery from './MovieGallery';
 
 function App() {
+  const [token, setToken] = useState(null);
+
+  useEffect(() => {
+    const savedToken = localStorage.getItem('jwtToken');
+    setToken(savedToken);
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="cecyflix-logo">CECYFLIX</h1>
+      <Register />
+      <Login onLogin={setToken} />
+      {token ? <MovieGallery token={token} /> : <p>Inicia sesión para ver las películas</p>}
     </div>
   );
 }

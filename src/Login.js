@@ -50,7 +50,7 @@ function Login({ onLogin }) {
 
   return (
     <div>
-      <h1 className="cecyflix-logo">CECYFLIX</h1>
+      
 
       {!isRegistering ? (
         <>

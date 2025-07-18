@@ -40,9 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/reynahm060186/Production.git"
   }
 }
